@@ -20,6 +20,7 @@ namespace WispDeathBonus
             if (Instance == null) { Instance = this; }
             AddAssetBundleProvider();
             WispDeathBonusConfig.Init();
+            WispDeathBonusTokens.Init();
             WispDeathBonusItems.Init();
             WispDeathBonusHooks.Init();
         }
