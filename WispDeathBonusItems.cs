@@ -13,6 +13,7 @@ namespace WispDeathBonus
             //AddAffixBoon is a Hook
             AddSpeedBoon();
             AddDexBoon();
+            AddArmorBoon();
         }
 
         private static void AddDamageBoon()
@@ -31,6 +32,11 @@ namespace WispDeathBonus
         }
 
         private static void AddDexBoon()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void AddArmorBoon()
         {
             throw new NotImplementedException();
         }
