@@ -1,4 +1,4 @@
-﻿using System;
+﻿using RoR2;
 
 namespace WispDeathBonus
 {
@@ -6,19 +6,28 @@ namespace WispDeathBonus
     {
         internal static void Init()
         {
-            AddOnDeathHook();
-            AddOnCalculateStatsHook();
+            On.EntityStates.Wisp1Monster.DeathState.OnEnter += WispDeathHook;
+            On.RoR2.CharacterBody.RecalculateStats += WispBonusRecalculate;
         }
 
-        private static void AddOnDeathHook()
+        private static void WispDeathHook(On.EntityStates.Wisp1Monster.DeathState.orig_OnEnter orig, EntityStates.Wisp1Monster.DeathState self)
         {
-            //When a wisp dies, determine and give a bonus
+            orig(self);
+            try
+            {
+
+            }
+            catch { }
         }
 
-        private static void AddOnCalculateStatsHook()
+        private static void WispBonusRecalculate(On.RoR2.CharacterBody.orig_RecalculateStats orig, CharacterBody self)
         {
-            //When a bonus is given, recalculate the stats
-            //Also make sure that bonuses are counted on calculation
+            orig(self);
+            try
+            {
+
+            }
+            catch { }
         }
     }
 }

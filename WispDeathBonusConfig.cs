@@ -2,8 +2,8 @@
 {
     internal class WispDeathBonusConfig
     {
-        internal static decimal GlobalChance, PlayerChance, DamageChance, HealthChance, HealingChance, LevelChance, AffixChance, SpeedChance, DexChance, ArmorChance;
-        internal static decimal DamageValue, HealthValue, HealingValue, SpeedValue, DexValue, ArmorValue;
+        internal static float GlobalChance, PlayerChance, DamageChance, HealthChance, HealingChance, LevelChance, AffixChance, SpeedChance, DexChance, ArmorChance;
+        internal static float DamageValue, HealthValue, HealingValue, SpeedValue, DexValue, ArmorValue;
 
         internal static void Init()
         {
@@ -21,7 +21,7 @@
 
             LevelChance = WispDeathBonusPlugin.Instance.Config.Bind<decimal>("Level Boost Settings", "Level Boost Chance", 1.00m, "% Chance for Bonus to be a Level Boost").Value;
 
-            AffixChance = WispDeathBonusPlugin.Instance.Config.Bind<decimal>("Affix Boost Settings", "Affix Boost Chance", 16.00m, "% Chance for Bonus to be a Affix Boost").Value;
+            AffixChance = WispDeathBonusPlugin.Instance.Config.Bind<decimal>("Affix Boost Settings", "Affix Boost Chance", 16.00m, "% Chance for Bonus to be an Affix Boost").Value;
 
             SpeedChance = WispDeathBonusPlugin.Instance.Config.Bind<decimal>("Speed Boost Settings", "Speed Boost Chance", 18.00m, "% Chance for Bonus to be a Speed Boost").Value;
             SpeedValue = WispDeathBonusPlugin.Instance.Config.Bind<decimal>("Speed Boost Settings", "Speed Boost Amount", 3.00m, "% Increase in Speed per Speed Boost").Value;
@@ -29,7 +29,7 @@
             DexChance = WispDeathBonusPlugin.Instance.Config.Bind<decimal>("Fire Rate Boost Settings", "Fire Rate Boost Chance", 14.00m, "% Chance for Bonus to be a Fire Rate Boost").Value;
             DexValue = WispDeathBonusPlugin.Instance.Config.Bind<decimal>("Fire Rate Boost Settings", "Fire Rate Boost Amount", 5.00m, "% Increase in Fire Rate per Fire Rate Boost").Value;
 
-            ArmorChance = WispDeathBonusPlugin.Instance.Config.Bind<decimal>("Armor Boost Settings", "Armor Boost Chance", 8.00m, "% Chance for Bonus to be a Armor Boost").Value;
+            ArmorChance = WispDeathBonusPlugin.Instance.Config.Bind<decimal>("Armor Boost Settings", "Armor Boost Chance", 8.00m, "% Chance for Bonus to be an Armor Boost").Value;
             ArmorValue = WispDeathBonusPlugin.Instance.Config.Bind<decimal>("Armor Boost Settings", "Armor Boost Amount", 3.00m, "% Increase in Armor per Armor Boost").Value;
         }
     }

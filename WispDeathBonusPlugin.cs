@@ -1,12 +1,11 @@
 ﻿using BepInEx;
 using R2API.Utils;
-using System;
 
 namespace WispDeathBonus
 {
 
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
-    [R2APISubmoduleDependency(new string[] { "ItemAPI", "ItemDropAPI", "ResourcesAPI", "AssetPlus" })]
+    [R2APISubmoduleDependency(new string[] { "ItemAPI", "ItemDropAPI", "ResourcesAPI", "AssetPlus", "OrbAPI" })]
     [BepInPlugin(ModGuid, ModName, ModVer)]
     public class WispDeathBonusPlugin : BaseUnityPlugin
     {
