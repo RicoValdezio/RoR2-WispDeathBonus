@@ -54,7 +54,7 @@ namespace WispDeathBonus
                 pickupIconPath = null,
                 pickupModelPath = null,
                 tier = ItemTier.NoTier,
-                tags = new ItemTag[] { ItemTag.Damage }
+                tags = new ItemTag[] { ItemTag.Healing }
             };
             ItemDisplayRule[] DisplayRules = new ItemDisplayRule[0];
             CustomItem Item = new CustomItem(Def, DisplayRules);
@@ -73,7 +73,7 @@ namespace WispDeathBonus
                 pickupIconPath = null,
                 pickupModelPath = null,
                 tier = ItemTier.NoTier,
-                tags = new ItemTag[] { ItemTag.Damage }
+                tags = new ItemTag[] { ItemTag.Utility }
             };
             ItemDisplayRule[] DisplayRules = new ItemDisplayRule[0];
             CustomItem Item = new CustomItem(Def, DisplayRules);
@@ -111,7 +111,7 @@ namespace WispDeathBonus
                 pickupIconPath = null,
                 pickupModelPath = null,
                 tier = ItemTier.NoTier,
-                tags = new ItemTag[] { ItemTag.Damage }
+                tags = new ItemTag[] { ItemTag.Utility }
             };
             ItemDisplayRule[] DisplayRules = new ItemDisplayRule[0];
             CustomItem Item = new CustomItem(Def, DisplayRules);

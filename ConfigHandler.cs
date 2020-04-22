@@ -7,8 +7,8 @@
 
         internal static void Init()
         {
-            GlobalChance = WispDeathBonusPlugin.Instance.Config.Bind<float>("General Settings", "Global Proc Chance", 50.00f, "% Chance for Bonus to Generate on Wisp Death").Value;
-            PlayerChance = WispDeathBonusPlugin.Instance.Config.Bind<float>("General Settings", "Player Capture Chance", 20.00f, "% Chance for Bonus to go to Player").Value;
+            GlobalChance = WispDeathBonusPlugin.Instance.Config.Bind<float>("!General Settings", "Global Proc Chance", 50.00f, "% Chance for Bonus to Generate on Wisp Death").Value;
+            PlayerChance = WispDeathBonusPlugin.Instance.Config.Bind<float>("!General Settings", "Player Capture Chance", 20.00f, "% Chance for Bonus to go to Player").Value;
 
             DamageChance = WispDeathBonusPlugin.Instance.Config.Bind<float>("Damage Boost Settings", "Damage Boost Chance", 3.00f, "% Chance for Bonus to be a Damage Boost").Value;
             DamageValue = WispDeathBonusPlugin.Instance.Config.Bind<float>("Damage Boost Settings", "Damage Boost Amount", 3.00f, "% Increase in Damage per Damage Boost").Value;

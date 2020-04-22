@@ -1,4 +1,5 @@
 ﻿using RoR2;
+using UnityEngine;
 
 namespace WispDeathBonus
 {
@@ -6,16 +7,20 @@ namespace WispDeathBonus
     {
         internal static void Init()
         {
-            On.EntityStates.Wisp1Monster.DeathState.OnEnter += WispDeathHook;
+            On.RoR2.CharacterMaster.OnBodyDeath += WispDeathCheckHook;
             On.RoR2.CharacterBody.RecalculateStats += WispBonusRecalculate;
         }
 
-        private static void WispDeathHook(On.EntityStates.Wisp1Monster.DeathState.orig_OnEnter orig, EntityStates.Wisp1Monster.DeathState self)
+        private static void WispDeathCheckHook(On.RoR2.CharacterMaster.orig_OnBodyDeath orig, CharacterMaster self, CharacterBody body)
         {
-            orig(self);
+            orig(self, body);
             try
             {
-                Chat.AddMessage("A Lesser Wisp Has Died!");
+                //89 is the bodyIndex for Lesser Wisp
+                if (self.IsDeadAndOutOfLivesServer() && body.bodyIndex == 89)
+                {
+
+                }
             }
             catch { }
         }
