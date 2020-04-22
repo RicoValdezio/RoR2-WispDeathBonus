@@ -28,7 +28,6 @@ namespace WispDeathBonus
         private void AddAssetBundleProvider()
         {
             //Does nothing right now, but will import embedded asset
-            throw new NotImplementedException();
         }
     }
 }
