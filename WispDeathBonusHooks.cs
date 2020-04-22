@@ -15,7 +15,7 @@ namespace WispDeathBonus
             orig(self);
             try
             {
-
+                Chat.AddMessage("A Lesser Wisp Has Died!");
             }
             catch { }
         }
