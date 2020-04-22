@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace WispDeathBonus
+﻿namespace WispDeathBonus
 {
     internal class WispDeathBonusConfig
     {

@@ -1,42 +1,49 @@
-﻿using System;
+﻿using RoR2;
+using System;
 
 namespace WispDeathBonus
 {
     internal class WispDeathBonusItems
     {
+        internal static ItemIndex DamageBoostIndex;
+        internal static ItemIndex HealthBoostIndex;
+        internal static ItemIndex SpeedBoostIndex;
+        internal static ItemIndex DexBoostIndex;
+        internal static ItemIndex ArmorBoostIndex;
+
         internal static void Init()
         {
-            AddDamageBoon();
-            AddHealthBoon();
-            //AddHealingBoon is a Hook
-            //AddLevelBoon is a Hook
-            //AddAffixBoon is a Hook
-            AddSpeedBoon();
-            AddDexBoon();
-            AddArmorBoon();
+            AddDamageBoostItem();
+            AddHealthBoostItem();
+            //AddHealingBoostItem is a Hook
+            //AddLevelBoostItem is a Hook
+            //AddAffixBoostItem is a Hook
+            AddSpeedBoostItem();
+            AddDexBoostItem();
+            AddArmorBoostItem();
         }
 
-        private static void AddDamageBoon()
+        private static void AddDamageBoostItem()
         {
             throw new NotImplementedException();
         }
 
-        private static void AddHealthBoon()
+        private static void AddHealthBoostItem()
         {
             throw new NotImplementedException();
         }
 
-        private static void AddSpeedBoon()
+        private static void AddSpeedBoostItem()
         {
             throw new NotImplementedException();
         }
 
-        private static void AddDexBoon()
+        private static void AddDexBoostItem()
         {
             throw new NotImplementedException();
         }
 
-        private static void AddArmorBoon()
+        private static void AddArmorBoostItem()
         {
             throw new NotImplementedException();
         }
