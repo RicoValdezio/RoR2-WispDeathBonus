@@ -9,12 +9,6 @@ namespace WispDeathBonus
 
         internal static void Init()
         {
-            InitAndLoadConfig();
-            ConvertChancesToArray();
-        }
-
-        private static void InitAndLoadConfig()
-        {
             GlobalChance = WispDeathBonusPlugin.Instance.Config.Bind<decimal>("General Settings", "Global Proc Chance", 20.00m, "% Chance for Bonus to Generate on Wisp Death").Value;
             PlayerChance = WispDeathBonusPlugin.Instance.Config.Bind<decimal>("General Settings", "Player Capture Chance", 20.00m, "% Chance for Bonus to go to Player").Value;
 
@@ -39,12 +33,6 @@ namespace WispDeathBonus
 
             ArmorChance = WispDeathBonusPlugin.Instance.Config.Bind<decimal>("Armor Boost Settings", "Armor Boost Chance", 20.00m, "% Chance for Bonus to be a Armor Boost").Value;
             ArmorValue = WispDeathBonusPlugin.Instance.Config.Bind<decimal>("Armor Boost Settings", "Armor Boost Amount", 3.00m, "% Increase in Armor per Armor Boost").Value;
-        }
-
-        private static void ConvertChancesToArray()
-        {
-            //Convert the config values into something usable
-            throw new NotImplementedException();
         }
     }
 }
