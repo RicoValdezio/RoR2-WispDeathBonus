@@ -1,4 +1,5 @@
-﻿using RoR2;
+﻿using R2API;
+using RoR2;
 using System;
 
 namespace WispDeathBonus
@@ -25,27 +26,97 @@ namespace WispDeathBonus
 
         private static void AddDamageBoostItem()
         {
-            throw new NotImplementedException();
+            ItemDef Def = new ItemDef
+            {
+                name = "DAMAGE_BOOST_NAME",
+                nameToken = "DAMAGE_BOOST_NAME",
+                pickupToken = "DAMAGE_BOOST_DESC",
+                descriptionToken = null,
+                loreToken = null,
+                pickupIconPath = null,
+                pickupModelPath = null,
+                tier = ItemTier.NoTier,
+                tags = new ItemTag[] { ItemTag.Damage }
+            };
+            ItemDisplayRule[] DisplayRules = new ItemDisplayRule[0];
+            CustomItem Item = new CustomItem(Def, DisplayRules);
+            DamageBoostIndex = ItemAPI.Add(Item);
         }
 
         private static void AddHealthBoostItem()
         {
-            throw new NotImplementedException();
+            ItemDef Def = new ItemDef
+            {
+                name = "HEALTH_BOOST_NAME",
+                nameToken = "HEALTH_BOOST_NAME",
+                pickupToken = "HEALTH_BOOST_DESC",
+                descriptionToken = null,
+                loreToken = null,
+                pickupIconPath = null,
+                pickupModelPath = null,
+                tier = ItemTier.NoTier,
+                tags = new ItemTag[] { ItemTag.Damage }
+            };
+            ItemDisplayRule[] DisplayRules = new ItemDisplayRule[0];
+            CustomItem Item = new CustomItem(Def, DisplayRules);
+            HealthBoostIndex = ItemAPI.Add(Item);
         }
 
         private static void AddSpeedBoostItem()
         {
-            throw new NotImplementedException();
+            ItemDef Def = new ItemDef
+            {
+                name = "SPEED_BOOST_NAME",
+                nameToken = "SPEED_BOOST_NAME",
+                pickupToken = "SPEED_BOOST_DESC",
+                descriptionToken = null,
+                loreToken = null,
+                pickupIconPath = null,
+                pickupModelPath = null,
+                tier = ItemTier.NoTier,
+                tags = new ItemTag[] { ItemTag.Damage }
+            };
+            ItemDisplayRule[] DisplayRules = new ItemDisplayRule[0];
+            CustomItem Item = new CustomItem(Def, DisplayRules);
+            SpeedBoostIndex = ItemAPI.Add(Item);
         }
 
         private static void AddDexBoostItem()
         {
-            throw new NotImplementedException();
+            ItemDef Def = new ItemDef
+            {
+                name = "DEX_BOOST_NAME",
+                nameToken = "DEX_BOOST_NAME",
+                pickupToken = "DEX_BOOST_DESC",
+                descriptionToken = null,
+                loreToken = null,
+                pickupIconPath = null,
+                pickupModelPath = null,
+                tier = ItemTier.NoTier,
+                tags = new ItemTag[] { ItemTag.Damage }
+            };
+            ItemDisplayRule[] DisplayRules = new ItemDisplayRule[0];
+            CustomItem Item = new CustomItem(Def, DisplayRules);
+            DexBoostIndex = ItemAPI.Add(Item);
         }
 
         private static void AddArmorBoostItem()
         {
-            throw new NotImplementedException();
+            ItemDef Def = new ItemDef
+            {
+                name = "ARMOR_BOOST_NAME",
+                nameToken = "ARMOR_BOOST_NAME",
+                pickupToken = "ARMOR_BOOST_DESC",
+                descriptionToken = null,
+                loreToken = null,
+                pickupIconPath = null,
+                pickupModelPath = null,
+                tier = ItemTier.NoTier,
+                tags = new ItemTag[] { ItemTag.Damage }
+            };
+            ItemDisplayRule[] DisplayRules = new ItemDisplayRule[0];
+            CustomItem Item = new CustomItem(Def, DisplayRules);
+            ArmorBoostIndex = ItemAPI.Add(Item);
         }
     }
 }
