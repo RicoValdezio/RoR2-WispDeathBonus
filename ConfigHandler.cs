@@ -1,6 +1,6 @@
 ﻿namespace WispDeathBonus
 {
-    internal class WispDeathBonusConfig
+    internal class ConfigHandler
     {
         internal static float GlobalChance, PlayerChance, DamageChance, HealthChance, HealingChance, LevelChance, AffixChance, SpeedChance, DexChance, ArmorChance;
         internal static float DamageValue, HealthValue, HealingValue, SpeedValue, DexValue, ArmorValue;

@@ -2,7 +2,7 @@
 
 namespace WispDeathBonus
 {
-    internal class WispDeathBonusHooks
+    internal class Hooks
     {
         internal static void Init()
         {

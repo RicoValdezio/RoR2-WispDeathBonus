@@ -3,7 +3,7 @@ using RoR2;
 
 namespace WispDeathBonus
 {
-    internal class WispDeathBonusItems
+    internal class Items
     {
         internal static ItemIndex DamageBoostIndex;
         internal static ItemIndex HealthBoostIndex;

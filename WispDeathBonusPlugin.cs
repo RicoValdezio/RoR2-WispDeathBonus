@@ -18,10 +18,10 @@ namespace WispDeathBonus
         {
             if (Instance == null) { Instance = this; }
             AddAssetBundleProvider();
-            WispDeathBonusConfig.Init();
-            WispDeathBonusTokens.Init();
-            WispDeathBonusItems.Init();
-            WispDeathBonusHooks.Init();
+            ConfigHandler.Init();
+            Tokens.Init();
+            Items.Init();
+            Hooks.Init();
         }
 
         private void AddAssetBundleProvider()
