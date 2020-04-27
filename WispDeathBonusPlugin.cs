@@ -1,11 +1,14 @@
 ﻿using BepInEx;
+using R2API;
 using R2API.Utils;
+using System.Reflection;
+using UnityEngine;
 
 namespace WispDeathBonus
 {
 
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
-    [R2APISubmoduleDependency(new string[] { "ItemAPI", "ItemDropAPI", "ResourcesAPI", "AssetPlus", "OrbAPI", "LanguageAPI", "BuffAPI"})]
+    [R2APISubmoduleDependency(new string[] { "ItemAPI", "ItemDropAPI", "ResourcesAPI", "AssetPlus", "OrbAPI", "LanguageAPI", "BuffAPI" })]
     [BepInPlugin(ModGuid, ModName, ModVer)]
     public class WispDeathBonusPlugin : BaseUnityPlugin
     {
@@ -27,7 +30,12 @@ namespace WispDeathBonus
 
         private void AddAssetBundleProvider()
         {
-            //Does nothing right now, but will import embedded asset
+            using (System.IO.Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("WispDeathBonus.wdbp"))
+            {
+                AssetBundle bundle = AssetBundle.LoadFromStream(stream);
+                AssetBundleResourcesProvider provider = new AssetBundleResourcesProvider("@WDBP", bundle);
+                ResourcesAPI.AddProvider(provider);
+            }
         }
     }
 }

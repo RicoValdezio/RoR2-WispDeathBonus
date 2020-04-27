@@ -29,7 +29,7 @@ namespace WispDeathBonus
                 pickupToken = "DAMAGE_BOOST_DESC",
                 descriptionToken = "DAMAGE_BOOST_DESC",
                 loreToken = null,
-                pickupIconPath = null,
+                pickupIconPath = "@WDBP:Assets/WDBP/StrengthItem.png",
                 pickupModelPath = null,
                 tier = ItemTier.NoTier,
                 tags = new ItemTag[] { ItemTag.Damage }
@@ -48,7 +48,7 @@ namespace WispDeathBonus
                 pickupToken = "HEALTH_BOOST_DESC",
                 descriptionToken = "HEALTH_BOOST_DESC",
                 loreToken = null,
-                pickupIconPath = null,
+                pickupIconPath = "@WDBP:Assets/WDBP/HealthItem.png",
                 pickupModelPath = null,
                 tier = ItemTier.NoTier,
                 tags = new ItemTag[] { ItemTag.Healing }
@@ -67,7 +67,7 @@ namespace WispDeathBonus
                 pickupToken = "SPEED_BOOST_DESC",
                 descriptionToken = "SPEED_BOOST_DESC",
                 loreToken = null,
-                pickupIconPath = null,
+                pickupIconPath = "@WDBP:Assets/WDBP/SpeedItem.png",
                 pickupModelPath = null,
                 tier = ItemTier.NoTier,
                 tags = new ItemTag[] { ItemTag.Utility }
@@ -86,7 +86,7 @@ namespace WispDeathBonus
                 pickupToken = "DEX_BOOST_DESC",
                 descriptionToken = "DEX_BOOST_DESC",
                 loreToken = null,
-                pickupIconPath = null,
+                pickupIconPath = "@WDBP:Assets/WDBP/DexItem.png",
                 pickupModelPath = null,
                 tier = ItemTier.NoTier,
                 tags = new ItemTag[] { ItemTag.Damage }
@@ -105,7 +105,7 @@ namespace WispDeathBonus
                 pickupToken = "ARMOR_BOOST_DESC",
                 descriptionToken = "ARMOR_BOOST_DESC",
                 loreToken = null,
-                pickupIconPath = null,
+                pickupIconPath = "@WDBP:Assets/WDBP/ArmorItem.png",
                 pickupModelPath = null,
                 tier = ItemTier.NoTier,
                 tags = new ItemTag[] { ItemTag.Utility }

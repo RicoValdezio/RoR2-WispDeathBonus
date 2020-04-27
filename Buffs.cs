@@ -28,7 +28,7 @@ namespace WispDeathBonus
                 name = "Aspect of Strength",
                 canStack = true,
                 isDebuff = false,
-                //iconPath = null
+                iconPath = "@WDBP:Assets/WDBP/StrengthIcon.png"
             };
             CustomBuff buff = new CustomBuff(def);
             DamageBoostIndex = BuffAPI.Add(buff);
@@ -41,7 +41,7 @@ namespace WispDeathBonus
                 name = "Aspect of Vitality",
                 canStack = true,
                 isDebuff = false,
-                //iconPath = null
+                iconPath = "@WDBP:Assets/WDBP/HealthItem.png"
             };
             CustomBuff buff = new CustomBuff(def);
             HealthBoostIndex = BuffAPI.Add(buff);
@@ -54,7 +54,7 @@ namespace WispDeathBonus
                 name = "Aspect of Speed",
                 canStack = true,
                 isDebuff = false,
-                //iconPath = null
+                iconPath = "@WDBP:Assets/WDBP/SpeedItem.png"
             };
             CustomBuff buff = new CustomBuff(def);
             SpeedBoostIndex = BuffAPI.Add(buff);
@@ -67,7 +67,7 @@ namespace WispDeathBonus
                 name = "Aspect of Fury",
                 canStack = true,
                 isDebuff = false,
-                //iconPath = null
+                iconPath = "@WDBP:Assets/WDBP/DexItem.png"
             };
             CustomBuff buff = new CustomBuff(def);
             DexBoostIndex = BuffAPI.Add(buff);
@@ -80,7 +80,7 @@ namespace WispDeathBonus
                 name = "Aspect of Toughness",
                 canStack = true,
                 isDebuff = false,
-                //iconPath = null
+                iconPath = "@WDBP:Assets/WDBP/ArmorItem.png"
             };
             CustomBuff buff = new CustomBuff(def);
             ArmorBoostIndex = BuffAPI.Add(buff);

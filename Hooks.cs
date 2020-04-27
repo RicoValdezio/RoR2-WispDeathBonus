@@ -103,6 +103,7 @@ namespace WispDeathBonus
             if (ConfigHandler.PlayerChance >= UnityEngine.Random.Range(0, 100))
             {
                 search.teamMaskFilter.AddTeam(TeamIndex.Player);
+                relativeOrder -= 1;
             }
             else
             {
