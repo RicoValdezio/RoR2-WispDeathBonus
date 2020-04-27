@@ -62,7 +62,7 @@ namespace WispDeathBonus
 							case 0: //Nothing
 								break;
 							case 1: //Blue
-								if(targetTeam == TeamIndex.Player && ConfigHandler.AffixOverride)
+								if (targetTeam == TeamIndex.Player && ConfigHandler.AffixOverride)
 								{
 									targetInventory.SetEquipmentIndex(EquipmentIndex.AffixBlue);
 								}

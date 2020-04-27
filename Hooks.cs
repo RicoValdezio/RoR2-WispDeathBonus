@@ -41,7 +41,7 @@ namespace WispDeathBonus
                     if (ConfigHandler.GlobalChance >= Random.Range(0, 100))
                     {
                         int boostType = DetermineBoostType();
-                        HurtBox target = GetBonusTarget(self, body);
+                        HurtBox target = GetBonusTarget(body);
                         WispBoostOrb orb = new WispBoostOrb
                         {
                             origin = body.corePosition,
@@ -51,11 +51,27 @@ namespace WispDeathBonus
                         if (boostType == 5)
                         {
                             int affixType = 0;
-                            if (body.HasBuff(BuffIndex.AffixBlue)) affixType = 1;
-                            else if (body.HasBuff(BuffIndex.AffixRed)) affixType = 2;
-                            else if (body.HasBuff(BuffIndex.AffixWhite)) affixType = 3;
-                            else if (body.HasBuff(BuffIndex.AffixHaunted)) affixType = 4;
-                            else if (body.HasBuff(BuffIndex.AffixPoison)) affixType = 5;
+                            if (body.HasBuff(BuffIndex.AffixBlue))
+                            {
+                                affixType = 1;
+                            }
+                            else if (body.HasBuff(BuffIndex.AffixRed))
+                            {
+                                affixType = 2;
+                            }
+                            else if (body.HasBuff(BuffIndex.AffixWhite))
+                            {
+                                affixType = 3;
+                            }
+                            else if (body.HasBuff(BuffIndex.AffixHaunted))
+                            {
+                                affixType = 4;
+                            }
+                            else if (body.HasBuff(BuffIndex.AffixPoison))
+                            {
+                                affixType = 5;
+                            }
+
                             orb.affixType = affixType;
                         }
                         OrbManager.instance.AddOrb(orb);
@@ -65,7 +81,7 @@ namespace WispDeathBonus
             catch { }
         }
 
-        private static HurtBox GetBonusTarget(CharacterMaster self, CharacterBody body)
+        private static HurtBox GetBonusTarget(CharacterBody body)
         {
             BullseyeSearch search = new BullseyeSearch
             {
