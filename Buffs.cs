@@ -28,8 +28,7 @@ namespace WispDeathBonus
                 name = "Aspect of Strength",
                 canStack = true,
                 isDebuff = false,
-                //iconPath = null,
-                buffColor = Color.red + Color.yellow
+                //iconPath = null
             };
             CustomBuff buff = new CustomBuff(def);
             DamageBoostIndex = BuffAPI.Add(buff);
@@ -42,8 +41,7 @@ namespace WispDeathBonus
                 name = "Aspect of Vitality",
                 canStack = true,
                 isDebuff = false,
-                //iconPath = null,
-                buffColor = Color.green
+                //iconPath = null
             };
             CustomBuff buff = new CustomBuff(def);
             HealthBoostIndex = BuffAPI.Add(buff);
@@ -56,8 +54,7 @@ namespace WispDeathBonus
                 name = "Aspect of Speed",
                 canStack = true,
                 isDebuff = false,
-                //iconPath = null,
-                buffColor = Color.cyan
+                //iconPath = null
             };
             CustomBuff buff = new CustomBuff(def);
             SpeedBoostIndex = BuffAPI.Add(buff);
@@ -70,8 +67,7 @@ namespace WispDeathBonus
                 name = "Aspect of Fury",
                 canStack = true,
                 isDebuff = false,
-                //iconPath = null,
-                buffColor = Color.yellow
+                //iconPath = null
             };
             CustomBuff buff = new CustomBuff(def);
             DexBoostIndex = BuffAPI.Add(buff);
@@ -84,8 +80,7 @@ namespace WispDeathBonus
                 name = "Aspect of Toughness",
                 canStack = true,
                 isDebuff = false,
-                //iconPath = null,
-                buffColor = Color.yellow + Color.grey
+                //iconPath = null
             };
             CustomBuff buff = new CustomBuff(def);
             ArmorBoostIndex = BuffAPI.Add(buff);
