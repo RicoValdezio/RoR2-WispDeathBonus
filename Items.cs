@@ -24,7 +24,7 @@ namespace WispDeathBonus
         {
             ItemDef Def = new ItemDef
             {
-                name = "DAMAGE_BOOST_NAME",
+                name = "Aspect of Strength",
                 nameToken = "DAMAGE_BOOST_NAME",
                 pickupToken = "DAMAGE_BOOST_DESC",
                 descriptionToken = "DAMAGE_BOOST_DESC",
@@ -43,7 +43,7 @@ namespace WispDeathBonus
         {
             ItemDef Def = new ItemDef
             {
-                name = "HEALTH_BOOST_NAME",
+                name = "Aspect of Vitality",
                 nameToken = "HEALTH_BOOST_NAME",
                 pickupToken = "HEALTH_BOOST_DESC",
                 descriptionToken = "HEALTH_BOOST_DESC",
@@ -62,7 +62,7 @@ namespace WispDeathBonus
         {
             ItemDef Def = new ItemDef
             {
-                name = "SPEED_BOOST_NAME",
+                name = "Aspect of Speed",
                 nameToken = "SPEED_BOOST_NAME",
                 pickupToken = "SPEED_BOOST_DESC",
                 descriptionToken = "SPEED_BOOST_DESC",
@@ -81,7 +81,7 @@ namespace WispDeathBonus
         {
             ItemDef Def = new ItemDef
             {
-                name = "DEX_BOOST_NAME",
+                name = "Aspect of Fury",
                 nameToken = "DEX_BOOST_NAME",
                 pickupToken = "DEX_BOOST_DESC",
                 descriptionToken = "DEX_BOOST_DESC",
@@ -100,7 +100,7 @@ namespace WispDeathBonus
         {
             ItemDef Def = new ItemDef
             {
-                name = "ARMOR_BOOST_NAME",
+                name = "Aspect of Toughness",
                 nameToken = "ARMOR_BOOST_NAME",
                 pickupToken = "ARMOR_BOOST_DESC",
                 descriptionToken = "ARMOR_BOOST_DESC",
