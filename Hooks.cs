@@ -75,7 +75,7 @@ namespace WispDeathBonus
                 search.teamMaskFilter.AddTeam(TeamIndex.Monster);
             }
             search.RefreshCandidates();
-            return search.GetResults().First();
+            return search.GetResults().ElementAt(1);
         }
 
         private static int DetermineBoostType()
