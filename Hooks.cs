@@ -1,4 +1,5 @@
 ﻿using RoR2;
+using RoR2.Orbs;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -42,33 +43,13 @@ namespace WispDeathBonus
                     {
                         int boostType = DetermineBoostType();
                         HurtBox target = GetBonusTarget(self, body);
-                        switch (boostType)
+                        WispBoostOrb orb = new WispBoostOrb
                         {
-                            case 1: //Damage Boost
-                                Chat.AddMessage("Damage Boost");
-                                break;
-                            case 2: //Health Boost
-                                Chat.AddMessage("Health Boost");
-                                break;
-                            case 3: //Healing Boost
-                                Chat.AddMessage("Healing Boost");
-                                break;
-                            case 4: //Level Boost
-                                Chat.AddMessage("Level Boost");
-                                break;
-                            case 5: //Affix Boost
-                                Chat.AddMessage("Affix Boost");
-                                break;
-                            case 6: //Speed Boost
-                                Chat.AddMessage("Speed Boost");
-                                break;
-                            case 7: //Dex Boost
-                                Chat.AddMessage("Dex Boost");
-                                break;
-                            case 8: //Armor Boost
-                                Chat.AddMessage("Armor Boost");
-                                break;
-                        }
+                            origin = body.corePosition,
+                            target = target,
+                            bonusType = boostType,
+                        };
+                        OrbManager.instance.AddOrb(orb);
                     }
                 }
             }
