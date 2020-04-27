@@ -1,5 +1,6 @@
 ﻿using RoR2;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace WispDeathBonus
@@ -40,7 +41,7 @@ namespace WispDeathBonus
                     if (ConfigHandler.GlobalChance >= Random.Range(0, 100))
                     {
                         int boostType = DetermineBoostType();
-                        //Determine the target with the PlayerChance
+                        HurtBox target = GetBonusTarget(self, body);
                         switch (boostType)
                         {
                             case 1: //Damage Boost
@@ -74,13 +75,35 @@ namespace WispDeathBonus
             catch { }
         }
 
+        private static HurtBox GetBonusTarget(CharacterMaster self, CharacterBody body)
+        {
+            BullseyeSearch search = new BullseyeSearch
+            {
+                searchOrigin = body.corePosition,
+                teamMaskFilter = TeamMask.none,
+                filterByLoS = false,
+                sortMode = BullseyeSearch.SortMode.Distance,
+                searchDirection = Vector3.zero
+            };
+            if (ConfigHandler.PlayerChance >= Random.Range(0, 100))
+            {
+                search.teamMaskFilter.AddTeam(TeamIndex.Player);
+            }
+            else
+            {
+                search.teamMaskFilter.AddTeam(TeamIndex.Monster);
+            }
+            search.RefreshCandidates();
+            return search.GetResults().First();
+        }
+
         private static int DetermineBoostType()
         {
-            float roll = Random.Range(0, BoostArray.Sum());
+            float roll = UnityEngine.Random.Range(0, BoostArray.Sum());
             for (int i = 1; i <= BoostArray.Length; i++)
             {
                 roll -= BoostArray[i - 1];
-                if(roll < 0)
+                if (roll < 0)
                 {
                     return i;
                 }
