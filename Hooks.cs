@@ -13,7 +13,6 @@ namespace WispDeathBonus
         {
             InitBoostArray();
             On.RoR2.CharacterMaster.OnBodyDeath += WispDeathCheckHook;
-            On.RoR2.CharacterBody.RecalculateStats += WispBonusRecalculate;
         }
 
         private static void InitBoostArray()
@@ -49,6 +48,12 @@ namespace WispDeathBonus
                             target = target,
                             bonusType = boostType,
                         };
+                        if (boostType == 5)
+                        {
+                            int affixType = 0;
+
+                            orb.affixType = affixType;
+                        }
                         OrbManager.instance.AddOrb(orb);
                     }
                 }
@@ -90,16 +95,6 @@ namespace WispDeathBonus
                 }
             }
             return BoostArray.Length;
-        }
-
-        private static void WispBonusRecalculate(On.RoR2.CharacterBody.orig_RecalculateStats orig, CharacterBody self)
-        {
-            orig(self);
-            try
-            {
-
-            }
-            catch { }
         }
     }
 }

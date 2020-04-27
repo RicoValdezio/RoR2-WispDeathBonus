@@ -36,35 +36,44 @@ namespace WispDeathBonus
 
 		public override void OnArrival()
 		{
-			switch (bonusType)
+			try
 			{
-				case 1:
-					targetInventory.GiveItem(Items.DamageBoostIndex);
-					break;
-				case 2:
-					targetInventory.GiveItem(Items.HealthBoostIndex);
-					break;
-				case 3:
-					targetHealth.HealFraction(ConfigHandler.HealingValue * 0.01f, new ProcChainMask());
-					break;
-				case 4:
-					ulong exp = (targetTeamManager.GetTeamNextLevelExperience(targetTeam) - targetTeamManager.GetTeamCurrentLevelExperience(targetTeam)) * (ulong)(ConfigHandler.ExpValue * 0.01f);
-					targetTeamManager.GiveTeamExperience(targetTeam, exp);
-					break;
-				case 5: //Affix
+				switch (bonusType)
+				{
+					case 1:
+						targetInventory.GiveItem(Items.DamageBoostIndex);
+						targetBody.baseDamage *= (ConfigHandler.DamageValue * 0.01f) + 1f;
+						break;
+					case 2:
+						targetInventory.GiveItem(Items.HealthBoostIndex);
+						targetBody.baseMaxHealth *= (ConfigHandler.HealthValue * 0.01f) + 1f;
+						break;
+					case 3:
+						targetHealth.HealFraction(ConfigHandler.HealingValue * 0.01f, new ProcChainMask());
+						break;
+					case 4:
+						ulong exp = (targetTeamManager.GetTeamNextLevelExperience(targetTeam) - targetTeamManager.GetTeamCurrentLevelExperience(targetTeam)) * (ulong)(ConfigHandler.ExpValue * 0.01f);
+						targetTeamManager.GiveTeamExperience(targetTeam, exp);
+						break;
+					case 5: //Affix
 
-					break;
-				case 6:
-					targetInventory.GiveItem(Items.SpeedBoostIndex);
-					break;
-				case 7:
-					targetInventory.GiveItem(Items.DexBoostIndex);
-					break;
-				case 8:
-					targetInventory.GiveItem(Items.ArmorBoostIndex);
-					break;
+						break;
+					case 6:
+						targetInventory.GiveItem(Items.SpeedBoostIndex);
+						targetBody.baseMoveSpeed *= (ConfigHandler.SpeedValue * 0.01f) + 1f;
+						break;
+					case 7:
+						targetInventory.GiveItem(Items.DexBoostIndex);
+						targetBody.baseAttackSpeed *= (ConfigHandler.DexValue * 0.01f) + 1f;
+						break;
+					case 8:
+						targetInventory.GiveItem(Items.ArmorBoostIndex);
+						targetBody.baseArmor *= (ConfigHandler.ArmorValue * 0.01f) + 1f;
+						break;
+				}
+				targetBody.RecalculateStats();
 			}
-			targetBody.RecalculateStats();
+			catch { }
 		}
 	}
 }
