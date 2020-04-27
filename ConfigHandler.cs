@@ -4,6 +4,7 @@
     {
         internal static float GlobalChance, PlayerChance, DamageChance, HealthChance, HealingChance, ExpChance, AffixChance, SpeedChance, DexChance, ArmorChance;
         internal static float DamageValue, HealthValue, HealingValue, ExpValue, SpeedValue, DexValue, ArmorValue;
+        internal static bool AffixOverride;
 
         internal static void Init()
         {
@@ -23,6 +24,7 @@
             ExpValue = WispDeathBonusPlugin.Instance.Config.Bind<float>("Experience Boost Settings", "Experience Boost Amount", 10.00f, "% Level gained per Experience Boost").Value;
 
             AffixChance = WispDeathBonusPlugin.Instance.Config.Bind<float>("Affix Boost Settings", "Affix Boost Chance", 16.00f, "% Chance for Bonus to be an Affix Boost").Value;
+            AffixOverride = WispDeathBonusPlugin.Instance.Config.Bind<bool>("Affix Boost Settings", "Affix Boost Override", false, "Affix Boost Replaces Equipment").Value;
 
             SpeedChance = WispDeathBonusPlugin.Instance.Config.Bind<float>("Speed Boost Settings", "Speed Boost Chance", 18.00f, "% Chance for Bonus to be a Speed Boost").Value;
             SpeedValue = WispDeathBonusPlugin.Instance.Config.Bind<float>("Speed Boost Settings", "Speed Boost Amount", 3.00f, "% Increase in Speed per Speed Boost").Value;
