@@ -15,9 +15,6 @@ namespace WispDeathBonus
         {
             AddDamageBoostItem();
             AddHealthBoostItem();
-            //AddHealingBoostItem is a Hook
-            //AddLevelBoostItem is a Hook
-            //AddAffixBoostItem is a Hook
             AddSpeedBoostItem();
             AddDexBoostItem();
             AddArmorBoostItem();
