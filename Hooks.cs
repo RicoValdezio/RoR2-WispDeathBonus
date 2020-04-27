@@ -29,57 +29,6 @@ namespace WispDeathBonus
             };
         }
 
-        private static void WispDeathCheckHook(On.RoR2.CharacterMaster.orig_OnBodyDeath orig, CharacterMaster self, CharacterBody body)
-        {
-            orig(self, body);
-            try
-            {
-                //89 is the bodyIndex for Lesser Wisp
-                if (self.IsDeadAndOutOfLivesServer() && body.bodyIndex == 89)
-                {
-                    if (ConfigHandler.GlobalChance >= Random.Range(0, 100))
-                    {
-                        int boostType = DetermineBoostType();
-                        HurtBox target = GetBonusTarget(body, 1);
-                        WispBoostOrb orb = new WispBoostOrb
-                        {
-                            origin = body.corePosition,
-                            target = target,
-                            bonusType = boostType,
-                        };
-                        if (boostType == 5)
-                        {
-                            int affixType = 0;
-                            if (body.HasBuff(BuffIndex.AffixBlue))
-                            {
-                                affixType = 1;
-                            }
-                            else if (body.HasBuff(BuffIndex.AffixRed))
-                            {
-                                affixType = 2;
-                            }
-                            else if (body.HasBuff(BuffIndex.AffixWhite))
-                            {
-                                affixType = 3;
-                            }
-                            else if (body.HasBuff(BuffIndex.AffixHaunted))
-                            {
-                                affixType = 4;
-                            }
-                            else if (body.HasBuff(BuffIndex.AffixPoison))
-                            {
-                                affixType = 5;
-                            }
-
-                            orb.affixType = affixType;
-                        }
-                        OrbManager.instance.AddOrb(orb);
-                    }
-                }
-            }
-            catch { }
-        }
-
         private static void WispDeathHook(On.RoR2.CharacterMaster.orig_OnBodyDeath orig, CharacterMaster self, CharacterBody body)
         {
             orig(self, body);
@@ -97,7 +46,7 @@ namespace WispDeathBonus
                         orbsToFire = ConfigHandler.GreaterWispOrbs;
                     }
 
-                    for(int i = 1; i <= orbsToFire; i++)
+                    for (int i = 1; i <= orbsToFire; i++)
                     {
                         WispBoostOrb orb = new WispBoostOrb
                         {
@@ -105,7 +54,7 @@ namespace WispDeathBonus
                             target = GetBonusTarget(body, i),
                             bonusType = DetermineBoostType(),
                         };
-                        if(orb.bonusType == 5)
+                        if (orb.bonusType == 5)
                         {
                             orb.affixType = GetAffixType(body);
                         }
