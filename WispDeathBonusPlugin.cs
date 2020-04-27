@@ -21,6 +21,7 @@ namespace WispDeathBonus
             ConfigHandler.Init();
             Tokens.Init();
             Items.Init();
+            Buffs.Init();
             Hooks.Init();
         }
 

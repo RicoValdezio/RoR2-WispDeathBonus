@@ -44,10 +44,18 @@ namespace WispDeathBonus
 					case 1:
 						targetInventory.GiveItem(Items.DamageBoostIndex);
 						targetBody.baseDamage *= (ConfigHandler.DamageValue * 0.01f) + 1f;
+						if(targetTeam == TeamIndex.Monster)
+						{
+							targetBody.AddBuff(Buffs.DamageBoostIndex);
+						}
 						break;
 					case 2:
 						targetInventory.GiveItem(Items.HealthBoostIndex);
 						targetBody.baseMaxHealth *= (ConfigHandler.HealthValue * 0.01f) + 1f;
+						if (targetTeam == TeamIndex.Monster)
+						{
+							targetBody.AddBuff(Buffs.HealthBoostIndex);
+						}
 						break;
 					case 3:
 						targetHealth.HealFraction(ConfigHandler.HealingValue * 0.01f, new ProcChainMask());
@@ -116,14 +124,26 @@ namespace WispDeathBonus
 					case 6:
 						targetInventory.GiveItem(Items.SpeedBoostIndex);
 						targetBody.baseMoveSpeed *= (ConfigHandler.SpeedValue * 0.01f) + 1f;
+						if (targetTeam == TeamIndex.Monster)
+						{
+							targetBody.AddBuff(Buffs.SpeedBoostIndex);
+						}
 						break;
 					case 7:
 						targetInventory.GiveItem(Items.DexBoostIndex);
 						targetBody.baseAttackSpeed *= (ConfigHandler.DexValue * 0.01f) + 1f;
+						if (targetTeam == TeamIndex.Monster)
+						{
+							targetBody.AddBuff(Buffs.DexBoostIndex);
+						}
 						break;
 					case 8:
 						targetInventory.GiveItem(Items.ArmorBoostIndex);
 						targetBody.baseArmor *= (ConfigHandler.ArmorValue * 0.01f) + 1f;
+						if (targetTeam == TeamIndex.Monster)
+						{
+							targetBody.AddBuff(Buffs.ArmorBoostIndex);
+						}
 						break;
 				}
 				targetBody.RecalculateStats();

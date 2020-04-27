@@ -37,7 +37,7 @@ namespace WispDeathBonus
                 if (ConfigHandler.GlobalChance >= Random.Range(0, 100))
                 {
                     int orbsToFire = 0;
-                    if (self.IsDeadAndOutOfLivesServer() && body.bodyIndex == 89)
+                    if (self.IsDeadAndOutOfLivesServer() && (body.bodyIndex == 89 || body.bodyIndex == 90))
                     {
                         orbsToFire = ConfigHandler.LesserWispOrbs;
                     }

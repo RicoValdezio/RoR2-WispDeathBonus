@@ -28,7 +28,7 @@ namespace WispDeathBonus
                 name = "Aspect of Strength",
                 canStack = true,
                 isDebuff = false,
-                iconPath = null,
+                //iconPath = null,
                 buffColor = Color.red + Color.yellow
             };
             CustomBuff buff = new CustomBuff(def);
@@ -42,7 +42,7 @@ namespace WispDeathBonus
                 name = "Aspect of Vitality",
                 canStack = true,
                 isDebuff = false,
-                iconPath = null,
+                //iconPath = null,
                 buffColor = Color.green
             };
             CustomBuff buff = new CustomBuff(def);
@@ -56,7 +56,7 @@ namespace WispDeathBonus
                 name = "Aspect of Speed",
                 canStack = true,
                 isDebuff = false,
-                iconPath = null,
+                //iconPath = null,
                 buffColor = Color.cyan
             };
             CustomBuff buff = new CustomBuff(def);
@@ -70,7 +70,7 @@ namespace WispDeathBonus
                 name = "Aspect of Fury",
                 canStack = true,
                 isDebuff = false,
-                iconPath = null,
+                //iconPath = null,
                 buffColor = Color.yellow
             };
             CustomBuff buff = new CustomBuff(def);
@@ -84,7 +84,7 @@ namespace WispDeathBonus
                 name = "Aspect of Toughness",
                 canStack = true,
                 isDebuff = false,
-                iconPath = null,
+                //iconPath = null,
                 buffColor = Color.yellow + Color.grey
             };
             CustomBuff buff = new CustomBuff(def);
