@@ -23,7 +23,7 @@ namespace WispDeathBonus
                 ConfigHandler.DamageChance,
                 ConfigHandler.HealthChance,
                 ConfigHandler.HealingChance,
-                ConfigHandler.LevelChance,
+                ConfigHandler.ExpChance,
                 ConfigHandler.AffixChance,
                 ConfigHandler.SpeedChance,
                 ConfigHandler.DexChance,

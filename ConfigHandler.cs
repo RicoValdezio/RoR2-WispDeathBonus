@@ -2,8 +2,8 @@
 {
     internal class ConfigHandler
     {
-        internal static float GlobalChance, PlayerChance, DamageChance, HealthChance, HealingChance, LevelChance, AffixChance, SpeedChance, DexChance, ArmorChance;
-        internal static float DamageValue, HealthValue, HealingValue, SpeedValue, DexValue, ArmorValue;
+        internal static float GlobalChance, PlayerChance, DamageChance, HealthChance, HealingChance, ExpChance, AffixChance, SpeedChance, DexChance, ArmorChance;
+        internal static float DamageValue, HealthValue, HealingValue, ExpValue, SpeedValue, DexValue, ArmorValue;
 
         internal static void Init()
         {
@@ -19,7 +19,8 @@
             HealingChance = WispDeathBonusPlugin.Instance.Config.Bind<float>("Healing Boost Settings", "Healing Boost Chance", 35.00f, "% Chance for Bonus to be a Healing Boost").Value;
             HealingValue = WispDeathBonusPlugin.Instance.Config.Bind<float>("Healing Boost Settings", "Healing Boost Amount", 10.00f, "% Health recovered by Healing Boost").Value;
 
-            LevelChance = WispDeathBonusPlugin.Instance.Config.Bind<float>("Level Boost Settings", "Level Boost Chance", 1.00f, "% Chance for Bonus to be a Level Boost").Value;
+            ExpChance = WispDeathBonusPlugin.Instance.Config.Bind<float>("Experience Boost Settings", "Experience Boost Chance", 1.00f, "% Chance for Bonus to be a Experience Boost").Value;
+            ExpValue = WispDeathBonusPlugin.Instance.Config.Bind<float>("Experience Boost Settings", "Experience Boost Amount", 10.00f, "% Level gained per Experience Boost").Value;
 
             AffixChance = WispDeathBonusPlugin.Instance.Config.Bind<float>("Affix Boost Settings", "Affix Boost Chance", 16.00f, "% Chance for Bonus to be an Affix Boost").Value;
 
