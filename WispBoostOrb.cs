@@ -9,6 +9,8 @@ namespace WispDeathBonus
 		private CharacterBody targetBody;
 		private Inventory targetInventory;
 		private HealthComponent targetHealth;
+		private TeamIndex targetTeam;
+		private TeamManager targetTeamManager;
 		public int bonusType;
 		public int affixType = 0;
 
@@ -23,6 +25,8 @@ namespace WispDeathBonus
 			effectData.SetHurtBoxReference(target);
 			EffectManager.SpawnEffect(Resources.Load<GameObject>("Prefabs/Effects/OrbEffects/DevilOrbEffect"), effectData, true);
 			targetBody = target.healthComponent.body;
+			targetTeam = target.teamIndex;
+			targetTeamManager = new TeamManager();
 			if (targetBody)
 			{
 				targetInventory = targetBody.inventory;
@@ -43,8 +47,9 @@ namespace WispDeathBonus
 				case 3:
 					targetHealth.HealFraction(ConfigHandler.HealingValue * 0.01f, new ProcChainMask());
 					break;
-				case 4: //Exp
-
+				case 4:
+					ulong exp = (targetTeamManager.GetTeamNextLevelExperience(targetTeam) - targetTeamManager.GetTeamCurrentLevelExperience(targetTeam)) * (ulong)(ConfigHandler.ExpValue * 0.01f);
+					targetTeamManager.GiveTeamExperience(targetTeam, exp);
 					break;
 				case 5: //Affix
 
