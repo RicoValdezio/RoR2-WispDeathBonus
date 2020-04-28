@@ -1,0 +1,21 @@
+# Wisp Possession
+Wisp variants now have a chance to grant a nearby monster a buff when they die, but there is also a small chance that the player may capture that buff.
+Enemy buffs are 10x as strong as player buffs, but player buffs are permanent (items).
+All buff chances and behaviors are configurable.
+
+Known Bugs
+------------
+SoulWisps write the damage number that killed them to the log: Cause unknown.
+Turrets and Drones may capture player buffs: Cause known, planned fix later.
+
+Changelog
+------------
+1.0.0 - Initial Upload
+
+Installation
+------------
+Place the .dll in Risk of Rain 2\BepInEx\plugins
+
+Contact
+------------
+If you have issues/suggestions, leave them on the github as an issue/suggestion.
