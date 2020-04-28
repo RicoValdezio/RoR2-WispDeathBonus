@@ -41,26 +41,30 @@ namespace WispDeathBonus
 			{
 				switch (bonusType)
 				{
-					case 1:
+                    #region DamageBoost
+                    case 1 when targetTeam == TeamIndex.Player:
 						targetInventory.GiveItem(Items.DamageBoostIndex);
 						targetBody.baseDamage *= (ConfigHandler.DamageValue * 0.01f) + 1f;
-						if(targetTeam == TeamIndex.Monster)
-						{
-							targetBody.AddBuff(Buffs.DamageBoostIndex);
-						}
 						break;
-					case 2:
+					case 1 when targetTeam == TeamIndex.Monster:
+						targetBody.AddBuff(Buffs.DamageBoostIndex);
+						targetBody.baseDamage *= (ConfigHandler.DamageValue * 0.1f) + 1f;
+						break;
+                    #endregion
+                    #region HealthBoost
+                    case 2 when targetTeam == TeamIndex.Player:
 						targetInventory.GiveItem(Items.HealthBoostIndex);
 						targetBody.baseMaxHealth *= (ConfigHandler.HealthValue * 0.01f) + 1f;
-						if (targetTeam == TeamIndex.Monster)
-						{
-							targetBody.AddBuff(Buffs.HealthBoostIndex);
-						}
 						break;
-					case 3:
+					case 2 when targetTeam == TeamIndex.Monster:
+						targetBody.AddBuff(Buffs.HealthBoostIndex);
+						targetBody.baseMaxHealth *= (ConfigHandler.HealthValue * 0.1f) + 1f;
+						break;
+                    #endregion
+                    case 3:
 						targetHealth.HealFraction(ConfigHandler.HealingValue * 0.01f, new ProcChainMask());
 						break;
-					case 4:
+                    case 4:
 						ulong exp = (targetTeamManager.GetTeamNextLevelExperience(targetTeam) - targetTeamManager.GetTeamCurrentLevelExperience(targetTeam)) * (ulong)(ConfigHandler.ExpValue * 0.01f);
 						targetTeamManager.GiveTeamExperience(targetTeam, exp);
 						break;
@@ -121,32 +125,38 @@ namespace WispDeathBonus
 								break;
 						}
 						break;
-					case 6:
+                    #region SpeedBoost
+                    case 6 when targetTeam ==TeamIndex.Player:
 						targetInventory.GiveItem(Items.SpeedBoostIndex);
 						targetBody.baseMoveSpeed *= (ConfigHandler.SpeedValue * 0.01f) + 1f;
-						if (targetTeam == TeamIndex.Monster)
-						{
-							targetBody.AddBuff(Buffs.SpeedBoostIndex);
-						}
 						break;
-					case 7:
+					case 6 when targetTeam == TeamIndex.Monster:
+						targetBody.AddBuff(Buffs.SpeedBoostIndex);
+						targetBody.baseMoveSpeed *= (ConfigHandler.SpeedValue * 0.1f) + 1f;
+						break;
+                    #endregion
+                    #region DexBoost
+                    case 7 when targetTeam == TeamIndex.Player:
 						targetInventory.GiveItem(Items.DexBoostIndex);
 						targetBody.baseAttackSpeed *= (ConfigHandler.DexValue * 0.01f) + 1f;
-						if (targetTeam == TeamIndex.Monster)
-						{
-							targetBody.AddBuff(Buffs.DexBoostIndex);
-						}
 						break;
-					case 8:
+					case 7 when targetTeam == TeamIndex.Monster:
+						targetBody.AddBuff(Buffs.DexBoostIndex);
+						targetBody.baseAttackSpeed *= (ConfigHandler.DexValue * 0.1f) + 1f;
+						break;
+                    #endregion
+                    #region ArmorBoost
+                    case 8 when targetTeam == TeamIndex.Player:
 						targetInventory.GiveItem(Items.ArmorBoostIndex);
 						targetBody.baseArmor *= (ConfigHandler.ArmorValue * 0.01f) + 1f;
-						if (targetTeam == TeamIndex.Monster)
-						{
-							targetBody.AddBuff(Buffs.ArmorBoostIndex);
-						}
 						break;
-				}
-				targetBody.RecalculateStats();
+					case 8 when targetTeam == TeamIndex.Monster:
+						targetBody.AddBuff(Buffs.ArmorBoostIndex);
+						targetBody.baseArmor *= (ConfigHandler.ArmorValue * 0.1f) + 1f;
+						break;
+                        #endregion
+                }
+                targetBody.RecalculateStats();
 			}
 			catch { }
 		}
