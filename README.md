@@ -10,6 +10,7 @@ Turrets and Drones may capture player buffs: Cause known, planned fix later.
 
 Changelog
 ------------
+1.0.2 - Fixed a bug that would prevent multiplayer play (bytes be wierd, use ints instead)
 1.0.1 - Fixed a bug that prevented itemized buffs from persisting between levels
 1.0.0 - Initial upload
 

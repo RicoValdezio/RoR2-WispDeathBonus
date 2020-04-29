@@ -5,14 +5,14 @@
         internal static float GlobalChance, PlayerChance, DamageChance, HealthChance, HealingChance, ExpChance, AffixChance, SpeedChance, DexChance, ArmorChance;
         internal static float DamageValue, HealthValue, HealingValue, ExpValue, SpeedValue, DexValue, ArmorValue;
         internal static bool AffixOverride;
-        internal static byte LesserWispOrbs, GreaterWispOrbs;
+        internal static int LesserWispOrbs, GreaterWispOrbs;
 
         internal static void Init()
         {
             GlobalChance = WispDeathBonusPlugin.Instance.Config.Bind<float>("!General Settings", "Global Proc Chance", 80.00f, "% Chance for Bonus to Generate on Wisp Death").Value;
             PlayerChance = WispDeathBonusPlugin.Instance.Config.Bind<float>("!General Settings", "Player Capture Chance", 20.00f, "% Chance for Bonus to go to Player").Value;
-            LesserWispOrbs = WispDeathBonusPlugin.Instance.Config.Bind<byte>("!General Settings", "Lesser Wisp Bonuses", 1, "Number of Bonuses a Lesser Wisp Creates").Value;
-            GreaterWispOrbs = WispDeathBonusPlugin.Instance.Config.Bind<byte>("!General Settings", "Greater Wisp Bonuses", 5, "Number of Bonuses a Greater Wisp Creates").Value;
+            LesserWispOrbs = WispDeathBonusPlugin.Instance.Config.Bind<int>("!General Settings", "Lesser Wisp Bonuses", 1, "Number of Bonuses a Lesser Wisp Creates").Value;
+            GreaterWispOrbs = WispDeathBonusPlugin.Instance.Config.Bind<int>("!General Settings", "Greater Wisp Bonuses", 5, "Number of Bonuses a Greater Wisp Creates").Value;
 
             DamageChance = WispDeathBonusPlugin.Instance.Config.Bind<float>("Damage Boost Settings", "Damage Boost Chance", 3.00f, "% Chance for Bonus to be a Damage Boost").Value;
             DamageValue = WispDeathBonusPlugin.Instance.Config.Bind<float>("Damage Boost Settings", "Damage Boost Amount", 3.00f, "% Increase in Damage per Damage Boost").Value;
