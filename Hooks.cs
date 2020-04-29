@@ -12,6 +12,26 @@ namespace WispDeathBonus
         {
             InitBoostArray();
             On.RoR2.CharacterMaster.OnBodyDeath += WispDeathHook;
+            On.RoR2.CharacterMaster.SpawnBody += RespawnItemApply;
+        }
+
+        private static CharacterBody RespawnItemApply(On.RoR2.CharacterMaster.orig_SpawnBody orig, CharacterMaster self, GameObject bodyPrefab, Vector3 position, Quaternion rotation)
+        {
+            CharacterBody body = orig(self, bodyPrefab, position, rotation);
+            try
+            {
+                if (body.inventory)
+                {
+                    Inventory inventory = body.inventory;
+                    body.baseDamage *= (ConfigHandler.DamageValue * 0.01f * inventory.GetItemCount(Items.DamageBoostIndex)) + 1f;
+                    body.baseMaxHealth *= (ConfigHandler.HealthValue * 0.01f * inventory.GetItemCount(Items.HealthBoostIndex)) + 1f;
+                    body.baseMoveSpeed *= (ConfigHandler.SpeedValue * 0.01f * inventory.GetItemCount(Items.SpeedBoostIndex)) + 1f;
+                    body.baseAttackSpeed *= (ConfigHandler.DamageValue * 0.01f * inventory.GetItemCount(Items.DexBoostIndex)) + 1f;
+                    body.baseArmor *= (ConfigHandler.DamageValue * 0.01f * inventory.GetItemCount(Items.ArmorBoostIndex)) + 1f;
+                }
+            }
+            catch { }
+            return body;
         }
 
         private static void InitBoostArray()
