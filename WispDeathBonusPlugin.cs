@@ -12,7 +12,7 @@ namespace WispDeathBonus
     [BepInPlugin(ModGuid, ModName, ModVer)]
     public class WispDeathBonusPlugin : BaseUnityPlugin
     {
-        private const string ModVer = "1.0.0";
+        private const string ModVer = "1.1.0";
         private const string ModName = "WispDeathBonus";
         private const string ModGuid = "com.RicoValdezio.WispDeathBonus";
         internal static WispDeathBonusPlugin Instance;

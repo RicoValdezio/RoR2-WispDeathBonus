@@ -1,10 +1,10 @@
 {
     "name": "WispPossession",
-    "version_number": "1.0.2",
+    "version_number": "1.1.0",
     "website_url": "https://github.com/RicoValdezio/WispDeathBonusPlugin",
     "description": "Wisps grant buffs to nearby monsters on death.",
     "dependencies": [
         "bbepis-BepInExPack-3.2.0",
-        "tristanmcpherson-R2API-2.4.21"
+        "tristanmcpherson-R2API-2.4.29"
     ]
 }
